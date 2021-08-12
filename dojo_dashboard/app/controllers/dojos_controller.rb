@@ -1,4 +1,4 @@
-class DojosController < ApplicationController
+class DojosController < ApplicationController    
     def index
         @dojos = Dojo.all
         @count = Dojo.all.count
@@ -23,6 +23,19 @@ class DojosController < ApplicationController
     end
 
     def edit
+        @dojo = Dojo.find(params[:id])    
+    end
+
+    def update
+        @dojo = Dojo.find(params[:id])
+        @dojo.update(dojo_params)
+        redirect_to "/dojos/#{@dojo.id}"
+    end
+
+    def destroy
+        @dojo = Dojo.find(params[:id])
+        @dojo.destroy
+        redirect_to "/dojos"
     end
 
     private
