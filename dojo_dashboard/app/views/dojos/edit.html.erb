@@ -1,0 +1,13 @@
+<h1>Editing </h1><br>
+<form action="/dojos" method="POST">
+<label for="branch">Branch: </label>
+<input type="text" name="<%= @dojo.branch%>"><br><br>
+<label for="street">Street: </label>
+<input type="text" name="<%= @dojo.street%>"><br><br>
+<label for="city">City: </label>
+<input type="text" name="<%= @dojo.city%>"><br><br>
+<label for="state">State: </label>
+<input type="text" name="dojo[state]" value="<%= @dojo.state%>"><br><br>
+<input type="submit" value="Create">
+</form><br><br>
+<a href="/dojos">go back</a>
